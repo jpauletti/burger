@@ -12,3 +12,15 @@ $("#add-burger").on("click", function(event) {
         location.reload();
     })
 })
+
+$(".devour").on("click", function() {
+    var id = $(this).data("id");
+
+    // update db devoured value
+    $.ajax("/api/burgers/" + id, {
+        type: "PUT",
+    }).then(function() {
+        console.log("id: " + id + " devoured.");
+        location.reload();
+    });
+})

@@ -30,3 +30,11 @@ router.post("/api/burgers", function(req, res) {
         res.status(201).end();
     });
 })
+
+router.put("/api/burgers/:id", function(req, res) {
+    var id = req.params.id;
+    burger.update("devoured", true, "id = " + id, function(response) {
+        console.log("one burger devoured");
+        res.status(201).end();
+    });
+})
