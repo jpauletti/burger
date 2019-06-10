@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container mb-5">
     <div class="row mt-4 text-center">
         <div class="col-md-12">
             <img src="assets/images/burger.png" width="150" alt="burger" class="mb-4">
@@ -19,65 +19,78 @@
                     <label for="burger-name" class="sr-only">Enter your burger</label>
                     <input type="text" class="form-control" id="burger-name" placeholder="Enter your burger">
                 </div>
-                <button type="submit" class="btn btn-primary mb-2">Submit</button>
+                <button type="submit" id="add-burger" class="btn btn-primary mb-2">Submit</button>
             </form>
         </div>
     </div>
-</div>
 
-<div class="row mt-3 justify-content-center">
-    {{!-- Queue --}}
-    <div class="col-md-4 text-center">
-        <h3 class="mb-3">Queue</h3>
-    </div>
 
-    {{!-- Devoured --}}
-    <div class="col-md-4 text-center">
-        <h3 class="mb-3">Devoured</h3>
-    </div>
-</div>
-
-<div class="row justify-content-center">
-    {{!-- Queue --}}
-    <div class="col-md-4">
-        {{#each burgers}}
-        {{#unless this.devoured}}
-        <div class="row align-items-center mb-2 queue-item">
-            <div class="col-md-9">{{this.id}}. {{this.burger_name}}</div>
-            <div class="col-md-3"><button type="button" class="btn btn-danger btn-sm devour">Devour</button></div>
+    {{!-- <div class="row mt-3 justify-content-center">
+        <div class="col-md-4 text-center">
+            <h3 class="mb-3">Queue</h3>
         </div>
-        {{/unless}}
-        {{/each}}
-        {{!-- <div class="row align-items-center mb-2 queue-item">
-            <div class="col-md-9">2. Here's the really super long Burger Name</div>
-            <div class="col-md-3"><button type="button" class="btn btn-danger btn-sm devour">Devour</button></div>
-        </div> --}}
-        {{!-- <ul>
-            <li>
-                1. Burger Name Here <button type="button" class="btn btn-danger btn-sm devour">Devour</button>
-            </li>
-            <li>
-                1. Longer dand Longer ldksnd Burger Name Here <button type="button" class="btn btn-danger btn-sm devour">Devour</button>
-            </li>
-        </ul> --}}
-    </div>
 
-    {{!-- Devoured --}}
-    <div class="col-md-4">
-        {{#each burgers}}
-        {{#if this.devoured}}
-        <div class="row align-items-center mb-2 devoured">
-            <div class="col-md-12">{{this.id}}. {{this.burger_name}}</div>
+        <div class="col-md-4 text-center">
+            <h3 class="mb-3">Devoured</h3>
         </div>
-        {{/if}}
-        {{/each}}
-        {{!-- <div class="row align-items-center mb-2 devoured">
-            <div class="col-md-9">3. Here's the Burger Name</div>
-        </div> --}}
-        {{!-- <ul>
-            <li class="devoured">1. Burger Name Here </li>
-            <li class="devoured">1. Really Raelly Relwnfdlks wlekfd Burger Name Here </li>
-        </ul> --}}
+    </div> --}}
 
+    <div class="row justify-content-center mt-3">
+        {{!-- Queue --}}
+        <div class="col-md-4">
+            <div class="row text-center">
+                <div class="col-md-12">
+                    <h3 class="mb-3">Queue</h3>
+                </div>
+            </div>
+
+            {{#each burgers}}
+            {{#unless this.devoured}}
+            <div class="row align-items-center mb-2 queue-item">
+                <div class="col-md-8 col-sm-9 burger-name">{{this.id}}. {{this.burger_name}}</div>
+                <div class="col-md-4 col-sm-3 burger-btn text-right"><button type="button" class="btn btn-danger btn-sm devour">Devour</button></div>
+            </div>
+            {{/unless}}
+            {{/each}}
+            {{!-- <div class="row align-items-center mb-2 queue-item">
+                <div class="col-md-9">2. Here's the really super long Burger Name</div>
+                <div class="col-md-3"><button type="button" class="btn btn-danger btn-sm devour">Devour</button></div>
+            </div> --}}
+            {{!-- <ul>
+                <li>
+                    1. Burger Name Here <button type="button" class="btn btn-danger btn-sm devour">Devour</button>
+                </li>
+                <li>
+                    1. Longer dand Longer ldksnd Burger Name Here <button type="button" class="btn btn-danger btn-sm devour">Devour</button>
+                </li>
+            </ul> --}}
+        </div>
+
+        <div class="col-md-1"></div>
+
+        {{!-- Devoured --}}
+        <div class="col-md-4" id="devoured-parent">
+            <div class="row text-center">
+                <div class="col-md-12">
+                    <h3 class="mb-3">Devoured</h3>
+                </div>
+            </div>
+
+            {{#each burgers}}
+            {{#if this.devoured}}
+            <div class="row align-items-center mb-2 devoured">
+                <div class="col-md-12">{{this.id}}. {{this.burger_name}}</div>
+            </div>
+            {{/if}}
+            {{/each}}
+            {{!-- <div class="row align-items-center mb-2 devoured">
+                <div class="col-md-9">3. Here's the Burger Name</div>
+            </div> --}}
+            {{!-- <ul>
+                <li class="devoured">1. Burger Name Here </li>
+                <li class="devoured">1. Really Raelly Relwnfdlks wlekfd Burger Name Here </li>
+            </ul> --}}
+
+        </div>
     </div>
 </div>

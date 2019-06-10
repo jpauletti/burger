@@ -4,6 +4,24 @@
     }
 }
 
+@media (max-width: 767px) {
+    #devoured-parent {
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 575px) {
+    /* .col-sm-9 {
+        flex: 0 0 75%;
+        max-width: 75%;
+    }
+
+    .col-sm-3 {
+        flex: 0 0 25%;
+        max-width: 25%;
+    } */
+}
+
 ul {
     list-style-type: none;
     padding-inline-start: 0px;
@@ -13,9 +31,13 @@ li {
     margin-bottom: 10px;
 }
 
-.devour {
-    margin-left: 8px;
+.burger-name, .burger-btn {
+    padding-right: 0;
 }
+
+/* .burger-btn {
+    text-align: right;
+} */
 
 .devoured {
     text-decoration: line-through;

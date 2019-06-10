@@ -15,3 +15,18 @@ router.get("/", function(req, res) {
         res.render("index", allBurgers);
     })
 })
+
+router.get("/api/burgers", function(req, res) {
+    burger.all(function (data) {
+        res.json(data);
+    })
+})
+
+router.post("/api/burgers", function(req, res) {
+    var newBurger = req.body.burger;
+    console.log(newBurger);
+    burger.create(newBurger, function(response) {
+        console.log("new burger added");
+        res.status(201).end();
+    });
+})
