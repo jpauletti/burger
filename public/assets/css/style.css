@@ -3,3 +3,26 @@
         width: 350px;
     }
 }
+
+ul {
+    list-style-type: none;
+    padding-inline-start: 0px;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+.devour {
+    margin-left: 8px;
+}
+
+.devoured {
+    text-decoration: line-through;
+}
+
+.queue-item {
+    padding: 5px 5px 5px 0;
+    background: lightgrey;
+    border-radius: 3px;
+}
