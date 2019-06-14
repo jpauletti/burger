@@ -20,6 +20,14 @@
         flex: 0 0 25%;
         max-width: 25%;
     } */
+
+    .burger-name {
+        max-width: 66.66%;
+    }
+
+    .burger-btn {
+        max-width: 33.33%;
+    }
 }
 
 ul {
